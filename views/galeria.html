@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería - La tienda del perfume</title>
+    <link rel="stylesheet" href="../css/galeria.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="galeria-page">
+  <script src="../js/main.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/galeria.js"></script>
+    <header>
+        <h1>La tienda del perfume</h1>
+        <p>Galería de imágenes</p>
+        
+    </header>
+
+    <nav>
+       
+    </nav>
+    <section class="gallery">
+        <h2>Nuestros Productos</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img
+              src="../img/img.1"
+              alt="Producto 1"
+              onerror="
+                this.src = 'https://via.placeholder.com/300x250?text=Producto+1'
+              "
+            >
+            <div class="gallery-overlay">
+              <h3>Precio 45.95</h3>
+              <p>Perfume Vintage</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="../img/img.2"
+              alt="Producto 2"
+              onerror="
+                this.src = 'https://via.placeholder.com/300x250?text=Producto+2'
+              "
+            >
+            <div class="gallery-overlay">
+              <h3>Precio 60.90</h3>
+              <p>Feromonas para perfume</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img
+              src="../img/img.3"
+              alt="Producto 3"
+              onerror="
+                this.src = 'https://via.placeholder.com/300x250?text=Producto+3'
+              "
+            >
+            <div class="gallery-overlay">
+              <h3>Precio 40.95</h3>
+              <p>Perfume para damas</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+    
+
+            <!-- Las imágenes se cargarán dinámicamente -->
+             
+        <!-- </div> -->
+       <!-- </div> -->
+
+    <!-- Modal para ver imágenes ampliadas -->
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img" src="about:blank" alt="Imagen ampliada">
+    </div>
+
+    <footer>
+    
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>La tienda del perfume</h3>
+                <p>La mejor tienda de perfumes</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i>Clle leganes 28</p>
+                <p><i class="fas fa-phone"></i>+34 912 345 678</p>
+                <p><i class="fas fa-envelope"></i> latiendadelperfume@gmail.com</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="https://facebook.com" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                    
+                    <a href="https://youtube.com" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        
+            
+    </footer>
+    
+</body>
+</html>

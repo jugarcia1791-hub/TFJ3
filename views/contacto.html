@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - La tienda del perfume</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" >
+    <!-- Leaflet Routing Machine CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css">
+    <!-- Nuestros estilos -->
+    <link rel="stylesheet" href="../css/contacto.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="contacto-page">
+    <script src="../js/navbar.js"></script>
+    <header>
+        <h1>La tienda del perfume</h1>
+        <p>Estamos aquí para ayudarte</p>
+    </header>
+
+    <nav>
+        
+    </nav>
+
+    <div class="container contacto-container">
+        <h1>Contacta con nosotros</h1>
+
+        <div class="contacto-grid">
+            <!-- Datos de contacto -->
+            <div class="contacto-info">
+                <h2>Información de contacto</h2>
+                <div class="info-item">
+                    <span class="icono">📍</span>
+                    <div>
+                        <strong>Dirección:</strong><br>
+                        Clle leganes 28<br>
+                        28001 Madrid, España
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span class="icono">📞</span>
+                    <div>
+                        <strong>Teléfono:</strong><br>
+                        +34 912 345 678
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span class="icono">✉️</span>
+                    <div>
+                        <strong>Email:</strong><br>
+                        latiendadelperfume@gmail.com
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span class="icono">🕒</span>
+                    <div>
+                        <strong>Horario:</strong><br>
+                        Lunes a Viernes: 9:00 - 18:00<br>
+                        Sábados: 10:00 - 14:00
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mapa y cálculo de ruta -->
+
+            <div class="contacto-mapa">
+                <h2>¿Cómo llegar?</h2>
+                <div id="mapa" class="mapa">
+                <div id="mapa-2">
+        <script
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6myHzS10YXdcazAFalmXvDkrYCp5cLc8&libraries=maps,marker&v=weekly"
+          defer
+        ></script>
+
+        <gmp-map
+          center="40.3300083956541, -3.767409325285421"
+          zoom="15"
+          map-id="DEMO_MAP_ID"
+          style="height: 500px"
+        >
+          <gmp-advanced-marker
+            position="40.3300083956541, -3.767409325285421"
+            title="Camilo Cafe"
+          ></gmp-advanced-marker>
+        </gmp-map>
+      </div>
+                </div>
+                
+                
+                <div class="ruta-form">
+                    <h3>Calcula tu ruta</h3>
+                    <div class="form-group">
+                        <label for="direccion-origen">Tu dirección:</label>
+                        <input type="text" id="direccion-origen" placeholder="Calle, ciudad...">
+                    </div>
+                    <div class="botones-ruta">
+                        <button id="btn-geolocalizar" class="btn btn-secondary">Usar mi ubicación</button>
+                        <button id="btn-calcular-ruta" class="btn btn-primary">Calcular ruta</button>
+                    </div>
+                    <div id="info-ruta" class="info-ruta"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <footer>
+    
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>La tienda del perfume</h3>
+                <p>La mejor tienda de perfumes</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i>Clle leganes 28</p>
+                <p><i class="fas fa-phone"></i>+34 912 345 678</p>
+                <p><i class="fas fa-envelope"></i> latiendadelperfume@gmail.com</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="https://facebook.com" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                    
+                    <a href="https://youtube.com" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        
+            
+    </footer>
+
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Leaflet Routing Machine JS -->
+    <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+    <!-- Nuestro script -->
+    <script src="js/contacto.js"></script>
+</body>
+</html>

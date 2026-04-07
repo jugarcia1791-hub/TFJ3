@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuesto - La tienda del perfume</title>
+    <link rel="stylesheet" href="../css/presupuesto.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="presupuesto-page">
+    <script src="../js/navbar.js"></script>
+    <header>
+        <h1>La tienda del perfume</h1>
+        <p>Solicita tu presupuesto</p>
+    </header>
+
+    <nav>
+        
+    </nav>
+
+    <div class="container">
+        <h1>Solicitud de Presupuesto</h1>
+        
+        <form class="formulario" id="presupuestoForm">
+            <!-- Datos de contacto -->
+            <div class="form-section">
+                <h2>Datos de Contacto</h2>
+                
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+                    <div class="error-message" id="error-nombre">El nombre solo puede contener letras y máximo 15 caracteres</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos">
+                    <div class="error-message" id="error-apellidos">Los apellidos solo pueden contener letras y máximo 40 caracteres</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="123456789">
+                    <div class="error-message" id="error-telefono">El teléfono solo puede contener números y máximo 9 dígitos</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com">
+                    <div class="error-message" id="error-email">Introduce un correo electrónico válido</div>
+                </div>
+            </div>
+
+            <!-- Presupuesto -->
+            <div class="form-section">
+                <h2>Calcula tu Presupuesto</h2>
+
+                <div class="form-group">
+                    <label for="producto">Producto:</label>
+                    <select id="producto" name="producto">
+                        <option value="1000">Perfumes arabes - 100€</option>
+                        <option value="2500">Lociones para baño - 250€</option>
+                        <option value="5000">fragancias con feromonas - 500€</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="plazo">Plazo (meses):</label>
+                    <input type="number" id="plazo" name="plazo" min="1" max="12" value="1">
+                    <small>Descuento por primer perfume y plazo: 5% por cada mes (máximo 25% descuento)</small>
+                </div>
+
+                <div class="form-group">
+                    <label>Extras:</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="extra1" value="300">
+                        <label for="extra1">Fragancias con feromonas</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="extra2" value="500">
+                        <label for="extra2">Perfumes arabes (+500€)</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="extra3" value="200">
+                        <label for="extra3">Lociones de baño(+200€)</label>
+                    </div>
+                </div>
+
+                <div class="presupuesto-final">
+                    <h3>Presupuesto Final</h3>
+                    <div class="cantidad" id="presupuestoFinal">0€</div>
+                </div>
+
+                <div class="condiciones">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="condiciones" name="condiciones">
+                        <label for="condiciones">Acepto las condiciones de privacidad</label>
+                    </div>
+                </div>
+
+                <div class="botones">
+                    <button type="submit" class="btn btn-primary">Enviar Presupuesto</button>
+                    <button type="button" class="btn btn-secondary" id="resetBtn">Resetear Formulario</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <footer>
+    
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>La tienda del perfume</h3>
+                <p>La mejor tienda de perfumes</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i>Clle leganes 28</p>
+                <p><i class="fas fa-phone"></i>+34 912 345 678</p>
+                <p><i class="fas fa-envelope"></i> latiendadelperfume@gmail.com</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="https://facebook.com" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                    
+                    <a href="https://youtube.com" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        
+            
+    </footer>
+
+
+    <script src="js/presupuesto.js"></script>
+</body>
+</html>
