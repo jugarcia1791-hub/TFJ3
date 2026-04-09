@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Configuración de los enlaces de navegación
     const navConfig = [
         { id: 'inicio', href:"index.html", icon: '🏠', text: 'Inicio' },
-        { id: 'galeria', href:"./galeria.html", icon: '🖼️', text: 'Galería' },
-        { id: 'presupuesto', href:"./presupuesto.html", icon: '💰', text: 'Presupuesto' },
-        { id: 'contacto', href:"./contacto.html", icon: '📞', text: 'Contacto' }
+        { id: 'galeria', href:"./views/galeria.html", icon: '🖼️', text: 'Galería' },
+        { id: 'presupuesto', href:"./views/presupuesto.html", icon: '💰', text: 'Presupuesto' },
+        { id: 'contacto', href:"./views/contacto.html", icon: '📞', text: 'Contacto' }
     ];
     
     // Función para crear la barra de navegación
