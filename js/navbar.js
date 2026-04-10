@@ -57,11 +57,7 @@ function crearNavbar() {
     // Limpiar el nav
     navElement.innerHTML = '';
     
-    // Crear botón de menú hamburguesa para móvil
-    const menuToggle = document.createElement('button');
-    menuToggle.className = 'menu-toggle';
-    menuToggle.innerHTML = '☰';
-    menuToggle.setAttribute('aria-label', 'Menú de navegación');
+    
     
     // Crear contenedor de enlaces
     const navContainer = document.createElement('div');
@@ -112,35 +108,19 @@ function crearNavbar() {
                 e.preventDefault();
                 return;
             }
-            // Cerrar menú en móvil si está abierto
-            if (window.innerWidth <= 768) {
-                navContainer.classList.remove('active');
-            }
+            
         });
         
         navItem.appendChild(link);
         navContainer.appendChild(navItem);
     });
     
-    navElement.appendChild(menuToggle);
+    
     navElement.appendChild(navContainer);
     
-    // Funcionalidad del menú hamburguesa
-    menuToggle.addEventListener('click', function() {
-        navContainer.classList.toggle('active');
-        // Cambiar el ícono del botón
-        menuToggle.innerHTML = navContainer.classList.contains('active') ? '✕' : '☰';
-    });
+   
     
-    // Cerrar menú al hacer clic fuera en móvil
-    document.addEventListener('click', function(event) {
-        if (window.innerWidth <= 768) {
-            if (!navElement.contains(event.target)) {
-                navContainer.classList.remove('active');
-                menuToggle.innerHTML = '☰';
-            }
-        }
-    });
+    
 }
 
 // Actualizar el título de la página
