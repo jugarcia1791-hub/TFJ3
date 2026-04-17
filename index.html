@@ -3,25 +3,42 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La tienda del perfume</title>
+    <title>✨La tienda del perfume✨</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/galeria.css">
     <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
   </head>
   <body class="index-page">
-    
+    <!--inicio del header-->
     <header>
-      
-      <h1>La tienda del perfume</h1>
-    
+      <h1>✨La tienda del perfume✨</h1>
       <p>Tu mejor opción en perfumes y fragancias</p>
-      <nav></nav>
-    </header>
-  
-    <nav></nav>
 
-    <div class="container">
+      <!-- Navbar sencillo -->
+       
+<!-- Navbar sencilla con logo llamativo -->
+<div class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-logo">
+            <div class="navbar-logo-icon">🧴</div>
+            <a href="index.html">Mi<span>SitioWeb</span></a>
+           
+        </div>
+        <div class="navbar-menu" id="navbarMenu">
+            <a href="index.html" class="active">Inicio</a>
+            <a href="views/galeria.html">Galería</a>
+            <a href="views/presupuesto.html">Presupuesto</a>
+            <a href="views/contacto.html">Contacto</a>
+        </div>
+    </div>
+</div>
+
+    </header>
+   <!--conetnido principal-->
+    <main>
+      <div class="container">
       <section>
         <h2>Bienvenidos</h2>
         <p>
@@ -93,44 +110,79 @@
           </div>
         </div>
       </section>
-    </div>
-
-    <footer>
-      <div class="footer-container">
-        <div class="footer-section">
-          <h3>La tienda del perfume</h3>
-          <p>La mejor tienda de perfumes</p>
-        </div>
-
-        <div class="footer-section">
-          <h3>Contacto</h3>
-          <p><i class="fas fa-map-marker-alt"></i>Clle leganes 28</p>
-          <p><i class="fas fa-phone"></i>+34 912 345 678</p>
-          <p><i class="fas fa-envelope"></i> latiendadelperfume@gmail.com</p>
-        </div>
-
-        <div class="footer-section">
-          <h3>Síguenos</h3>
-          <div class="social-links">
-            <a href="https://facebook.com" class="social-link" target="_blank"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a href="https://twitter.com" class="social-link" target="_blank"
-              ><i class="fab fa-twitter"></i
-            ></a>
-            <a href="https://instagram.com" class="social-link" target="_blank"
-              ><i class="fab fa-instagram"></i
-            ></a>
-
-            <a href="https://youtube.com" class="social-link" target="_blank"
-              ><i class="fab fa-youtube"></i
-            ></a>
-          </div>
-        </div>
       </div>
+    </main>
+    <!-- Contenido principal simulado, para que se vea el footer abajo -->
+    <div class="main-content">
+        <div class="hero-mock">
+            <h1>La Tienda del Perfume</h1>
+            <p>Descubre la esencia de la elegancia en cada fragancia 🌸✨</p>
+            <p style="font-size:0.9rem; margin-top:0.8rem;">Navega por nuestras colecciones y déjate envolver por aromas únicos.</p>
+        </div>
+        <!-- pequeña tarjeta decorativa opcional -->
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <div style="background:#fff6ed; padding: 1rem 2rem; border-radius: 60px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                🌹 Fragancias Florales
+            </div>
+            <div style="background:#fff6ed; padding: 1rem 2rem; border-radius: 60px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                🌿 Notas Amaderadas
+            </div>
+            <div style="background:#fff6ed; padding: 1rem 2rem; border-radius: 60px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                🍊 Cítricos Vibrantes
+            </div>
+        </div>
+    </div>
+  
+  <!-- FOOTER COMPLETO CON LOGOS DE REDES SOCIALES (Iconos vectoriales FontAwesome) -->
+    <footer>
+        <div class="footer-container">
+            <!-- Sección 1: Información de la tienda -->
+            <div class="footer-section">
+                <h2>La tienda del perfume</h2>
+                <p>La mejor tienda de perfumes con esencias exclusivas y atención personalizada.</p>
+                <p><i class="fas fa-medal"></i> Más de 10 años de fragancias premium</p>
+            </div>
+            
+            <!-- Sección 2: Contacto con íconos -->
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Calle Leganés 28, Madrid, España</p>
+                <p><i class="fas fa-phone-alt"></i> +34 912 345 678</p>
+                <p><i class="fas fa-envelope"></i> latiendadelperfume@gmail.com</p>
+            </div>
+            
+            <!-- Sección 3: Síguenos (con logos de redes sociales totalmente funcionales) -->
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <!-- Logo de Facebook -->
+                    <a href="https://facebook.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <!-- Logo de Twitter (X) -->
+                    <a href="https://twitter.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <!-- Logo de Instagram -->
+                    <a href="https://instagram.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- Logo de YouTube -->
+                    <a href="https://youtube.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+                <!-- Mensaje adicional sobre redes -->
+                <p style="margin-top: 1rem; font-size: 0.75rem;"><i class="fas fa-hashtag"></i> Conecta con nuestro mundo olfativo</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 La Tienda del Perfume | Todos los derechos reservados | Esencia y lujo para tu día a día
+        </div>
     </footer>
+
     <script src="js/main.js"></script>
-    <script src="js/navbar.js"></script>
+    
     
   </body>
 </html>

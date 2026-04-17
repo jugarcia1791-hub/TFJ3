@@ -1,66 +1,160 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Array de imágenes
     const imagenes = [
-        { src: 'https://picsum.photos/400/300?random=1', titulo: 'Proyecto Web 1', categoria: 'web' },
-        { src: 'https://picsum.photos/400/300?random=2', titulo: 'App Móvil 1', categoria: 'app' },
-        { src: 'https://picsum.photos/400/300?random=3', titulo: 'Diseño UI 1', categoria: 'diseno' },
-        { src: 'https://picsum.photos/400/300?random=4', titulo: 'Proyecto Web 2', categoria: 'web' },
-        { src: 'https://picsum.photos/400/300?random=5', titulo: 'App Móvil 2', categoria: 'app' },
-        { src: 'https://picsum.photos/400/300?random=6', titulo: 'Diseño UI 2', categoria: 'diseno' },
-        { src: 'https://picsum.photos/400/300?random=7', titulo: 'Proyecto Web 3', categoria: 'web' },
-        { src: 'https://picsum.photos/400/300?random=8', titulo: 'App Móvil 3', categoria: 'app' },
-        { src: 'https://picsum.photos/400/300?random=9', titulo: 'Diseño UI 3', categoria: 'diseno' }
+        { src: 'https://picsum.photos/id/1/800/600', titulo: 'Paisaje de montaña', categoria: 'web' },
+        { src: 'https://picsum.photos/id/10/800/600', titulo: 'Naturaleza', categoria: 'app' },
+        { src: 'https://picsum.photos/id/15/800/600', titulo: 'Camino rural', categoria: 'diseno' },
+        { src: 'https://picsum.photos/id/20/800/600', titulo: 'Escritorio de trabajo', categoria: 'web' },
+        { src: 'https://picsum.photos/id/26/800/600', titulo: 'Ciudad moderna', categoria: 'app' },
+        { src: 'https://picsum.photos/id/30/800/600', titulo: 'Café y trabajo', categoria: 'diseno' },
+        { src: 'https://picsum.photos/id/42/800/600', titulo: 'Piano', categoria: 'web' },
+        { src: 'https://picsum.photos/id/55/800/600', titulo: 'Atardecer', categoria: 'app' },
+        { src: 'https://picsum.photos/id/66/800/600', titulo: 'Montañas', categoria: 'diseno' }
     ];
 
-    const galeria = document.getElementById('galeria');
+    // Variables
+    let indiceActual = 0;
+    const carruselImagen = document.getElementById('carruselImagen');
+    const indicadoresContainer = document.getElementById('indicadores');
+    const galeriaMiniaturas = document.getElementById('galeriaMiniaturas');
+    const btnAnterior = document.getElementById('btnAnterior');
+    const btnSiguiente = document.getElementById('btnSiguiente');
+    
+    // Modal
     const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modal-img');
+    const modalImg = document.getElementById('modalImg');
+    const modalCaption = document.getElementById('modalCaption');
     const closeBtn = document.querySelector('.close');
-    const filtros = document.querySelectorAll('.filtro-btn');
+    const modalAnterior = document.getElementById('modalAnterior');
+    const modalSiguiente = document.getElementById('modalSiguiente');
 
-    function cargarImagenes(categoria = 'todos') {
-        galeria.innerHTML = '';
+    // Función para actualizar el carrusel
+    function actualizarCarrusel() {
+        carruselImagen.src = imagenes[indiceActual].src;
+        carruselImagen.alt = imagenes[indiceActual].titulo;
         
-        const imagenesFiltradas = categoria === 'todos' 
-            ? imagenes 
-            : imagenes.filter(img => img.categoria === categoria);
-
-        imagenesFiltradas.forEach(img => {
-            const item = document.createElement('div');
-            item.className = 'galeria-item';
-            item.innerHTML = `
-                <img src="${img.src}" alt="${img.titulo}" loading="lazy">
-                <div class="overlay">
-                    <h3>${img.titulo}</h3>
-                </div>
-            `;
-            
-            item.addEventListener('click', function() {
-                modal.style.display = 'block';
-                modalImg.src = img.src;
-                modalImg.alt = img.titulo;
-            });
-            
-            galeria.appendChild(item);
+        // Actualizar indicadores
+        const indicadores = document.querySelectorAll('.indicador');
+        indicadores.forEach((ind, i) => {
+            if (i === indiceActual) {
+                ind.classList.add('activo');
+            } else {
+                ind.classList.remove('activo');
+            }
+        });
+        
+        // Actualizar miniatura activa
+        const miniaturas = document.querySelectorAll('.miniatura-item');
+        miniaturas.forEach((min, i) => {
+            if (i === indiceActual) {
+                min.classList.add('active');
+            } else {
+                min.classList.remove('active');
+            }
         });
     }
 
-    filtros.forEach(filtro => {
-        filtro.addEventListener('click', function() {
-            filtros.forEach(f => f.classList.remove('active'));
-            this.classList.add('active');
-            cargarImagenes(this.dataset.categoria);
+    // Función para cambiar imagen (siguiente/anterior)
+    function cambiarImagen(direccion) {
+        if (direccion === 'siguiente') {
+            indiceActual = (indiceActual + 1) % imagenes.length;
+        } else if (direccion === 'anterior') {
+            indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
+        }
+        actualizarCarrusel();
+    }
+
+    // Crear indicadores
+    function crearIndicadores() {
+        imagenes.forEach((_, i) => {
+            const indicador = document.createElement('div');
+            indicador.classList.add('indicador');
+            if (i === 0) indicador.classList.add('activo');
+            indicador.addEventListener('click', () => {
+                indiceActual = i;
+                actualizarCarrusel();
+            });
+            indicadoresContainer.appendChild(indicador);
         });
+    }
+
+    // Crear miniaturas
+    function crearMiniaturas() {
+        imagenes.forEach((img, i) => {
+            const miniatura = document.createElement('div');
+            miniatura.classList.add('miniatura-item');
+            if (i === 0) miniatura.classList.add('active');
+            miniatura.innerHTML = `<img src="${img.src}" alt="${img.titulo}">`;
+            miniatura.addEventListener('click', () => {
+                indiceActual = i;
+                actualizarCarrusel();
+            });
+            galeriaMiniaturas.appendChild(miniatura);
+        });
+    }
+
+    // Abrir modal con imagen actual
+    function abrirModal() {
+        modal.style.display = 'block';
+        modalImg.src = imagenes[indiceActual].src;
+        modalCaption.textContent = imagenes[indiceActual].titulo;
+    }
+
+    // Cerrar modal
+    function cerrarModal() {
+        modal.style.display = 'none';
+    }
+
+    // Navegación en modal
+    function modalCambiarImagen(direccion) {
+        if (direccion === 'siguiente') {
+            indiceActual = (indiceActual + 1) % imagenes.length;
+        } else if (direccion === 'anterior') {
+            indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
+        }
+        modalImg.src = imagenes[indiceActual].src;
+        modalCaption.textContent = imagenes[indiceActual].title || imagenes[indiceActual].titulo;
+        actualizarCarrusel();
+    }
+
+    // Event listeners del carrusel
+    btnAnterior.addEventListener('click', () => cambiarImagen('anterior'));
+    btnSiguiente.addEventListener('click', () => cambiarImagen('siguiente'));
+
+    // Event listeners del modal
+    carruselImagen.addEventListener('click', abrirModal);
+    closeBtn.addEventListener('click', cerrarModal);
+    modalAnterior.addEventListener('click', () => modalCambiarImagen('anterior'));
+    modalSiguiente.addEventListener('click', () => modalCambiarImagen('siguiente'));
+    
+    // Cerrar modal al hacer clic fuera de la imagen
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            cerrarModal();
+        }
     });
 
-    closeBtn.onclick = function() {
-        modal.style.display = 'none';
-    };
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
+    // Teclado: flechas izquierda/derecha para navegar
+    document.addEventListener('keydown', (event) => {
+        if (modal.style.display === 'block') {
+            if (event.key === 'ArrowLeft') {
+                modalCambiarImagen('anterior');
+            } else if (event.key === 'ArrowRight') {
+                modalCambiarImagen('siguiente');
+            } else if (event.key === 'Escape') {
+                cerrarModal();
+            }
+        } else {
+            if (event.key === 'ArrowLeft') {
+                cambiarImagen('anterior');
+            } else if (event.key === 'ArrowRight') {
+                cambiarImagen('siguiente');
+            }
         }
-    };
+    });
 
-    cargarImagenes();
+    // Inicializar galería
+    crearIndicadores();
+    crearMiniaturas();
+    actualizarCarrusel();
 });

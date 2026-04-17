@@ -1,117 +1,363 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería - La tienda del perfume</title>
+    <title>La tienda del perfume</title>
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/galeria.css">
     <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body class="galeria-page">
-  <script src="../js/main.js"></script>
-    <script src="../js/navbar2.js"></script>
-    <script src="../js/galeria.js"></script>
-    <header>
-      <a href="index.html">
-        <h1>La tienda del perfume</h1>
-      </a>
-        <p>Galería de imágenes</p>
-        
-    </header>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    >
+  </head>
 
-    <nav></nav>
-       
-    
-    <section class="gallery">
-        <h2>Nuestros Productos</h2>
-        <div class="gallery-grid">
-          <div class="gallery-item">
-            <img
-              src="../img/img.1"
-              alt="Producto 1"
-              onerror="
-                this.src = 'https://via.placeholder.com/300x250?text=Producto+1'
-              "
-            >
-            <div class="gallery-overlay">
-              <h3>Precio 45.95</h3>
-              <p>Perfume Vintage</p>
-            </div>
+  <body>
+    <div class="header">
+      <h1>✨Galeria-La tienda del perfume✨</h1>
+      <p>
+        Descubre nuestra exclusiva galería de perfumes | Haz clic en cualquier
+        imagen para ampliarla
+      </p>
+      <!-- Navbar sencilla con logo llamativo -->
+      <div class="navbar">
+        <div class="navbar-container">
+          <div class="navbar-logo">
+            <div class="navbar-logo-icon">🧴</div>
+            <a href="../index.html">Mi<span>SitioWeb</span></a>
           </div>
-          <div class="gallery-item">
-            <img
-              src="../img/img.2"
-              alt="Producto 2"
-              onerror="
-                this.src = 'https://via.placeholder.com/300x250?text=Producto+2'
-              "
-            >
-            <div class="gallery-overlay">
-              <h3>Precio 60.90</h3>
-              <p>Feromonas para perfume</p>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img
-              src="../img/img.3"
-              alt="Producto 3"
-              onerror="
-                this.src = 'https://via.placeholder.com/300x250?text=Producto+3'
-              "
-            >
-            <div class="gallery-overlay">
-              <h3>Precio 40.95</h3>
-              <p>Perfume para damas</p>
-            </div>
+          <div class="navbar-menu" id="navbarMenu">
+            <a href="../index.html" class="active">Inicio</a>
+            <a href="./galeria.html">Galería</a>
+            <a href="./presupuesto.html">Presupuesto</a>
+            <a href="./contacto.html">Contacto</a>
           </div>
         </div>
-      </section>
-
-
-    
-
-            <!-- Las imágenes se cargarán dinámicamente -->
-             
-        <!-- </div> -->
-       <!-- </div> -->
-
-    <!-- Modal para ver imágenes ampliadas -->
-    <div id="modal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modal-img" src="about:blank" alt="Imagen ampliada">
+      </div>
     </div>
-
-    <footer>
-    
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>La tienda del perfume</h3>
-                <p>La mejor tienda de perfumes</p>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Contacto</h3>
-                <p><i class="fas fa-map-marker-alt"></i>Clle leganes 28</p>
-                <p><i class="fas fa-phone"></i>+34 912 345 678</p>
-                <p><i class="fas fa-envelope"></i> latiendadelperfume@gmail.com</p>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Síguenos</h3>
-                <div class="social-links">
-                    <a href="https://facebook.com" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://twitter.com" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://instagram.com" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
-                    
-                    <a href="https://youtube.com" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
+    <main>
+      <!-- Carrusel principal -->
+      <div class="carousel-container">
+        <div class="carousel" id="carousel">
+          <!-- Las imágenes se cargarán dinámicamente con JavaScript -->
         </div>
-        
-        
-            
+        <button class="carousel-btn prev" id="prevBtn">❮</button>
+        <button class="carousel-btn next" id="nextBtn">❯</button>
+        <div class="indicators" id="indicators"></div>
+      </div>
+
+      <!-- Galería en miniatura -->
+      <div class="thumbnail-gallery">
+        <h2>📸 Nuestra Colección</h2>
+        <div class="thumbnails" id="thumbnails"></div>
+      </div>
+
+      <!-- Modal para imagen ampliada -->
+      <div class="modal" id="modal">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content">
+          <img id="modalImage" src="#" alt="Imagen ampliada">
+        </div>
+        <div class="modal-info" id="modalInfo"></div>
+      </div>
+
+      <script>
+        // Datos de los perfumes (imágenes de Unsplash - perfumes y fragancias)
+        const perfumes = [
+          {
+            id: 1,
+            nombre: "Aurora Bloom",
+            descripcion: "Notas florales con toques de jazmín y vainilla",
+            imagen: "../img/perfume1.jpg",
+            precio: "€89",
+          },
+          {
+            id: 2,
+            nombre: "Midnight Oud",
+            descripcion: "Aroma amaderado con esencias de oud y ámbar",
+            imagen: "../img/perfume2.jpg",
+            precio: "€120",
+          },
+          {
+            id: 3,
+            nombre: "Citrus Dream",
+            descripcion: "Frescura cítrica con notas de bergamota y limón",
+            imagen: "../img/perfume3.jpg",
+            precio: "€75",
+          },
+          {
+            id: 4,
+            nombre: "Velvet Rose",
+            descripcion: "Romántica rosa mezclada con pimienta rosa",
+            imagen: "../img/perfume4.jpg",
+            precio: "€95",
+          },
+          {
+            id: 5,
+            nombre: "Ocean Breeze",
+            descripcion: "Brisa marina con toques de sal y algas",
+            imagen: "../img/perfume5.jpg",
+            precio: "€82",
+          },
+        ];
+
+        // Variables del carrusel
+        let currentIndex = 0;
+        let autoSlideInterval;
+
+        // Elementos del DOM
+        const carousel = document.getElementById("carousel");
+        const indicatorsContainer = document.getElementById("indicators");
+        const thumbnailsContainer = document.getElementById("thumbnails");
+        const modal = document.getElementById("modal");
+        const modalImage = document.getElementById("modalImage");
+        const modalInfo = document.getElementById("modalInfo");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        const closeModal = document.querySelector(".close-modal");
+
+        // Función para renderizar el carrusel dinámicamente
+        function renderCarousel() {
+          carousel.innerHTML = "";
+          perfumes.forEach((perfume, index) => {
+            const slide = document.createElement("div");
+            slide.className = `carousel-slide ${index === currentIndex ? "active" : ""}`;
+            slide.innerHTML = `
+                    <img src="${perfume.imagen}" alt="${perfume.nombre}" data-id="${perfume.id}">
+                    <div class="slide-info">
+                        <h3>${perfume.nombre}</h3>
+                        <p>${perfume.descripcion}</p>
+                        <p style="color: #b8860b; font-weight: bold; margin-top: 5px;">${perfume.precio}</p>
+                    </div>
+                `;
+            carousel.appendChild(slide);
+          });
+        }
+
+        // Función para renderizar los indicadores
+        function renderIndicators() {
+          indicatorsContainer.innerHTML = "";
+          perfumes.forEach((_, index) => {
+            const indicator = document.createElement("div");
+            indicator.className = `indicator ${index === currentIndex ? "active" : ""}`;
+            indicator.addEventListener("click", () => goToSlide(index));
+            indicatorsContainer.appendChild(indicator);
+          });
+        }
+
+        // Función para renderizar la galería en miniatura
+        function renderThumbnails() {
+          thumbnailsContainer.innerHTML = "";
+          perfumes.forEach((perfume) => {
+            const thumbnail = document.createElement("div");
+            thumbnail.className = "thumbnail";
+            thumbnail.innerHTML = `
+                    <img src="${perfume.imagen}" alt="${perfume.nombre}" data-id="${perfume.id}">
+                    <div class="thumbnail-info">
+                        <h4>${perfume.nombre}</h4>
+                        <p>${perfume.precio}</p>
+                    </div>
+                `;
+            thumbnail.addEventListener("click", () => openModal(perfume));
+            thumbnailsContainer.appendChild(thumbnail);
+          });
+        }
+
+        // Función para ir a un slide específico
+        function goToSlide(index) {
+          const slides = document.querySelectorAll(".carousel-slide");
+          const indicators = document.querySelectorAll(".indicator");
+
+          slides[currentIndex].classList.remove("active");
+          indicators[currentIndex].classList.remove("active");
+
+          currentIndex = (index + perfumes.length) % perfumes.length;
+
+          slides[currentIndex].classList.add("active");
+          indicators[currentIndex].classList.add("active");
+
+          // Resetear el auto-slide
+          resetAutoSlide();
+        }
+
+        // Función para siguiente slide
+        function nextSlide() {
+          goToSlide(currentIndex + 1);
+        }
+
+        // Función para slide anterior
+        function prevSlide() {
+          goToSlide(currentIndex - 1);
+        }
+
+        // Función para auto-slide
+        function startAutoSlide() {
+          autoSlideInterval = setInterval(() => {
+            nextSlide();
+          }, 5000);
+        }
+
+        function resetAutoSlide() {
+          clearInterval(autoSlideInterval);
+          startAutoSlide();
+        }
+
+        // Función para abrir el modal con la imagen ampliada
+        function openModal(perfume) {
+          modalImage.src = perfume.imagen;
+          modalImage.alt = perfume.nombre;
+          modalInfo.innerHTML = `
+                <h3>${perfume.nombre}</h3>
+                <p>${perfume.descripcion}</p>
+                <p style="color: #ffd700; margin-top: 5px;">${perfume.precio}</p>
+            `;
+          modal.classList.add("active");
+          document.body.style.overflow = "hidden";
+        }
+
+        // Función para cerrar el modal
+        function closeModalFunc() {
+          modal.classList.remove("active");
+          document.body.style.overflow = "";
+        }
+
+        // Evento para abrir modal desde el carrusel (delegación de eventos)
+        function setupModalEvents() {
+          // Para imágenes del carrusel
+          carousel.addEventListener("click", (e) => {
+            const img = e.target.closest("img");
+            if (img && img.dataset.id) {
+              const perfumeId = parseInt(img.dataset.id);
+              const perfume = perfumes.find((p) => p.id === perfumeId);
+              if (perfume) openModal(perfume);
+            }
+          });
+
+          // Para imágenes de las miniaturas (ya tienen evento individual, pero por si acaso)
+          thumbnailsContainer.addEventListener("click", (e) => {
+            const img = e.target.closest("img");
+            if (img && img.dataset.id) {
+              const perfumeId = parseInt(img.dataset.id);
+              const perfume = perfumes.find((p) => p.id === perfumeId);
+              if (perfume) openModal(perfume);
+            }
+          });
+        }
+
+        // Inicializar la página
+        function init() {
+          renderCarousel();
+          renderIndicators();
+          renderThumbnails();
+          setupModalEvents();
+          startAutoSlide();
+
+          // Eventos de los botones
+          prevBtn.addEventListener("click", prevSlide);
+          nextBtn.addEventListener("click", nextSlide);
+
+          // Evento para cerrar modal
+          closeModal.addEventListener("click", closeModalFunc);
+          modal.addEventListener("click", (e) => {
+            if (e.target === modal) closeModalFunc();
+          });
+
+          // Pausar auto-slide al hacer hover en el carrusel
+          carousel.addEventListener("mouseenter", () => {
+            clearInterval(autoSlideInterval);
+          });
+
+          carousel.addEventListener("mouseleave", () => {
+            startAutoSlide();
+          });
+        }
+
+        // Ejecutar cuando el DOM esté listo
+        document.addEventListener("DOMContentLoaded", init);
+      </script>
+    </main>
+    <!-- FOOTER COMPLETO CON LOGOS DE REDES SOCIALES (Iconos vectoriales FontAwesome) -->
+    <footer>
+      <div class="footer-container">
+        <!-- Sección 1: Información de la tienda -->
+        <div class="footer-section">
+          <h3>La tienda del perfume</h3>
+          <p>
+            La mejor tienda de perfumes con esencias exclusivas y atención
+            personalizada.
+          </p>
+          <p>
+            <i class="fas fa-medal"></i> Más de 10 años de fragancias premium
+          </p>
+        </div>
+
+        <!-- Sección 2: Contacto con íconos -->
+        <div class="footer-section">
+          <h3>Contacto</h3>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> Calle Leganés 28, Madrid,
+            España
+          </p>
+          <p><i class="fas fa-phone-alt"></i> +34 912 345 678</p>
+          <p><i class="fas fa-envelope"></i> latiendadelperfume@gmail.com</p>
+        </div>
+
+        <!-- Sección 3: Síguenos (con logos de redes sociales totalmente funcionales) -->
+        <div class="footer-section">
+          <h3>Síguenos</h3>
+          <div class="social-links">
+            <!-- Logo de Facebook -->
+            <a
+              href="https://facebook.com"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <!-- Logo de Twitter (X) -->
+            <a
+              href="https://twitter.com"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+            >
+              <i class="fab fa-twitter"></i>
+            </a>
+            <!-- Logo de Instagram -->
+            <a
+              href="https://instagram.com"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <!-- Logo de YouTube -->
+            <a
+              href="https://youtube.com"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+            >
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+          <!-- Mensaje adicional sobre redes -->
+          <p style="margin-top: 1rem; font-size: 0.75rem">
+            <i class="fas fa-hashtag"></i> Conecta con nuestro mundo olfativo
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2025 La Tienda del Perfume | Todos los derechos reservados |
+        Esencia y lujo para tu día a día
+      </div>
     </footer>
-    
-</body>
+  </body>
 </html>

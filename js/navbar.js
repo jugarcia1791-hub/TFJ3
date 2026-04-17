@@ -24,9 +24,9 @@ function getCurrentPage() {
 // Configuración de la navegación
 const navConfig = [
     { id: 'inicio', nombre: 'Inicio', icono: '🏠', ruta: 'index.html', enViews: false },
-    { id: 'galeria', nombre: 'Galería', icono: '🖼️', ruta: 'views/galeria.html', enViews: true },
-    { id: 'presupuesto', nombre: 'Presupuesto', icono: '💰', ruta: 'views/presupuesto.html', enViews: true },
-    { id: 'contacto', nombre: 'Contacto', icono: '📞', ruta: 'views/contacto.html', enViews: true }
+    { id: 'galeria', nombre: 'Galería', icono: '🖼️', ruta: 'galeria.html', enViews: true },
+    { id: 'presupuesto', nombre: 'Presupuesto', icono: '💰', ruta: 'presupuesto.html', enViews: true },
+    { id: 'contacto', nombre: 'Contacto', icono: '📞', ruta: 'contacto.html', enViews: true }
 ];
 
 // Función para construir la URL correcta
