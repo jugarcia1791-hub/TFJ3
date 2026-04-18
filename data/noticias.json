@@ -1,0 +1,24 @@
+{
+    "noticias": [
+        {
+            "titulo": "Nueva actualización de servicios",
+            "fecha": "2024-01-15",
+            "contenido": "Hemos mejorado nuestros servicios con las últimas tecnologías del mercado."
+        },
+        {
+            "titulo": "Lanzamiento de nueva plataforma",
+            "fecha": "2024-01-10",
+            "contenido": "Presentamos nuestra nueva plataforma digital con funcionalidades avanzadas."
+        },
+        {
+            "titulo": "Reconocimiento internacional",
+            "fecha": "2024-01-05",
+            "contenido": "Recibimos el premio a la innovación tecnológica 2024."
+        },
+        {
+            "titulo": "Nuevos miembros en el equipo",
+            "fecha": "2024-01-01",
+            "contenido": "Damos la bienvenida a nuevos talentos que fortalecerán nuestro equipo."
+        }
+    ]
+}
