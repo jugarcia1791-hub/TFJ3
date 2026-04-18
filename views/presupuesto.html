@@ -1,199 +1,241 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>✨Presupuesto-La tienda del perfume✨</title>
-    <link rel="stylesheet" href="../css/presupuesto.css">
-    <link rel="stylesheet" href="../css/navbar.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presupuesto - Esencia Divina</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    >
 </head>
-<body class="presupuesto-page">
-    
-    <header>
-        <h1>✨La tienda del perfume✨</h1>
-        <p>Solicita tu presupuesto</p>
-        <!-- Navbar sencilla con logo llamativo -->
+<body>
+<header>
+      <h1>✨La tienda del perfume✨</h1>
+      <p>Tu mejor opción en perfumes y fragancias</p>
+
+      <!-- Navbar sencillo -->
+       
+<!-- Navbar sencilla con logo llamativo -->
 <div class="navbar">
     <div class="navbar-container">
         <div class="navbar-logo">
             <div class="navbar-logo-icon">🧴</div>
-            <a href="../index.html">Mi<span>SitioWeb</span></a>
+            <a href="index.html">Mi<span>SitioWeb</span></a>
            
         </div>
         <div class="navbar-menu" id="navbarMenu">
             <a href="../index.html" >Inicio</a>
             <a href="./galeria.html">Galería</a>
-            <a href="./presupuesto.html" class="active">Presupuesto</a>
+            <a href="./presupuesto.html"class="active" >Presupuesto</a>
             <a href="./contacto.html">Contacto</a>
         </div>
     </div>
 </div>
+
     </header>
-    <main>
 
-    
+<div class="container">
+  <div class="header-presupuesto">
+    <a href="#" onclick="history.back(); return false;" class="back-link">
+      <i class="fas fa-arrow-left"></i> Volver a la tienda
+    </a>
+    <h1><i class="fas fa-calculator"></i> Solicita tu presupuesto</h1>
+    <div class="subtitle">Personaliza tu perfume y recibe una cotización instantánea</div>
+  </div>
 
-    <div class="container">
-        <h1>Solicitud de Presupuesto</h1>
-        
-        <form class="formulario" id="presupuestoForm">
-            <!-- Datos de contacto -->
-            <div class="form-section">
-                <h2>Datos de Contacto</h2>
-                
-                <div class="form-group">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
-                    <div class="error-message" id="error-nombre">El nombre solo puede contener letras y máximo 15 caracteres</div>
-                </div>
-
-                <div class="form-group">
-                    <label for="apellidos">Apellidos:</label>
-                    <input type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos">
-                    <div class="error-message" id="error-apellidos">Los apellidos solo pueden contener letras y máximo 40 caracteres</div>
-                </div>
-
-                <div class="form-group">
-                    <label for="telefono">Teléfono:</label>
-                    <input type="tel" id="telefono" name="telefono" placeholder="123456789">
-                    <div class="error-message" id="error-telefono">El teléfono solo puede contener números y máximo 9 dígitos</div>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Correo Electrónico:</label>
-                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com">
-                    <div class="error-message" id="error-email">Introduce un correo electrónico válido</div>
-                </div>
-            </div>
-
-            <!-- Presupuesto -->
-            <div class="form-section">
-                <h2>Calcula tu Presupuesto</h2>
-
-                <div class="form-group">
-                    <label for="producto">Producto:</label>
-                    <select id="producto" name="producto">
-                        <option value="1000">Perfumes arabes - 100€</option>
-                        <option value="2500">Lociones para baño - 250€</option>
-                        <option value="5000">fragancias con feromonas - 500€</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="plazo">Plazo (meses):</label>
-                    <input type="number" id="plazo" name="plazo" min="1" max="12" value="1">
-                    <small>Descuento por primer perfume y plazo: 5% por cada mes (máximo 25% descuento)</small>
-                </div>
-
-                <div class="form-group">
-                    <label>Extras:</label>
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="extra1" value="300">
-                        <label for="extra1">Fragancias con feromonas</label>
-                    </div>
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="extra2" value="500">
-                        <label for="extra2">Perfumes arabes (+500€)</label>
-                    </div>
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="extra3" value="200">
-                        <label for="extra3">Lociones de baño(+200€)</label>
-                    </div>
-                </div>
-
-                <div class="presupuesto-final">
-                    <h3>Presupuesto Final</h3>
-                    <div class="cantidad" id="presupuestoFinal">0€</div>
-                </div>
-
-                <div class="condiciones">
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="condiciones" name="condiciones">
-                        <label for="condiciones">Acepto las condiciones de privacidad</label>
-                    </div>
-                </div>
-
-                <div class="botones">
-                    <button type="submit" class="btn btn-primary">Enviar Presupuesto</button>
-                    <button type="button" class="btn btn-secondary" id="resetBtn">Resetear Formulario</button>
-                </div>
-            </div>
-        </form>
-    </div>
-
-    <!-- Contenido principal simulado, para que se vea el footer abajo -->
-    <div class="main-content">
-        <div class="hero-mock">
-            <h1>La Tienda del Perfume</h1>
-            <p>Descubre la esencia de la elegancia en cada fragancia 🌸✨</p>
-            <p style="font-size:0.9rem; margin-top:0.8rem;">Navega por nuestras colecciones y déjate envolver por aromas únicos.</p>
+  <div class="form-card">
+    <form id="budgetForm" novalidate>
+      <!-- PARTE 1: DATOS DE CONTACTO -->
+      <div class="form-section">
+        <div class="section-title">
+          <i class="fas fa-user-circle"></i> Datos de contacto
         </div>
-        <!-- pequeña tarjeta decorativa opcional -->
-        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-            <div style="background:#fff6ed; padding: 1rem 2rem; border-radius: 60px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                🌹 Fragancias Florales
-            </div>
-            <div style="background:#fff6ed; padding: 1rem 2rem; border-radius: 60px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                🌿 Notas Amaderadas
-            </div>
-            <div style="background:#fff6ed; padding: 1rem 2rem; border-radius: 60px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                🍊 Cítricos Vibrantes
-            </div>
+        <div class="row-2cols">
+          <div class="form-group">
+            <label>Nombre <span class="required">*</span></label>
+            <input type="text" id="nombre" placeholder="Ej: Laura" maxlength="15">
+            <div class="error-msg" id="nombreError"></div>
+          </div>
+          <div class="form-group">
+            <label>Apellidos <span class="required">*</span></label>
+            <input type="text" id="apellidos" placeholder="Ej: García López" maxlength="40">
+            <div class="error-msg" id="apellidosError"></div>
+          </div>
         </div>
-    </div>
-    </main>
-  
+        <div class="row-2cols">
+          <div class="form-group">
+            <label>Teléfono <span class="required">*</span></label>
+            <input type="tel" id="telefono" placeholder="600123456" maxlength="9">
+            <div class="error-msg" id="telefonoError"></div>
+          </div>
+          <div class="form-group">
+            <label>Correo electrónico <span class="required">*</span></label>
+            <input type="email" id="email" placeholder="nombre@ejemplo.com">
+            <div class="error-msg" id="emailError"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PARTE 2: PRESUPUESTO (Producto, Plazo, Extras) -->
+      <div class="form-section">
+        <div class="section-title">
+          <i class="fas fa-chart-line"></i> Calcula tu presupuesto
+        </div>
+
+        <!-- Producto (radio, 3 opciones con precio) -->
+        <div class="budget-option">
+          <h3>🌿 Producto</h3>
+          <div class="radio-group" id="productGroup">
+            <label>
+              <input type="radio" name="producto" value="ambar" data-price="89"> Ámbar Nocturno <span class="price-badge">+$89</span>
+            </label>
+            <label>
+              <input type="radio" name="producto" value="jardin" data-price="76"> Jardín Secreto <span class="price-badge">+$76</span>
+            </label>
+            <label>
+              <input type="radio" name="producto" value="oud" data-price="124"> Rey de Oud <span class="price-badge">+$124</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Plazo (input numérico, meses/días: se aplica descuento) -->
+        <div class="budget-option">
+          <h3>⏱️ Plazo de entrega (días)</h3>
+          <div class="plazo-input">
+            <input type="number" id="plazo" min="1" max="90" value="15" step="1">
+            <div class="error-msg" id="plazoError" style="color:#d9534f; font-size:0.7rem"></div>
+            <small style="color:#8c6248;">Recibe un 5% de descuento si el plazo es mayor a 20 días, y 10% si es mayor a 45 días.</small>
+          </div>
+        </div>
+
+        <!-- Extras (checkboxes con aumento de precio) -->
+        <div class="budget-option">
+          <h3>✨ Extras premium</h3>
+          <div class="extra-group">
+            <label>
+              <input type="checkbox" id="extraGrabado" data-extra-price="15"> Grabado personalizado <span class="price-badge">+$15</span>
+            </label>
+            <label>
+              <input type="checkbox" id="extraCaja" data-extra-price="25"> Caja de regalo de lujo <span class="price-badge">+$25</span>
+            </label>
+            <label>
+              <input type="checkbox" id="extraMuestra" data-extra-price="10"> Muestra de 2ml de otra fragancia <span class="price-badge">+$10</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Campo de presupuesto dinámico -->
+        <div class="presupuesto-result" id="presupuestoBox">
+          <h4>PRESUPUESTO ESTIMADO</h4>
+          <div class="presupuesto-final" id="presupuestoValor">$0.00</div>
+          <div class="presupuesto-detalle" id="presupuestoDetalle">Selecciona un producto para comenzar</div>
+        </div>
+      </div>
+
+      <!-- Condiciones y envío -->
+      <div class="form-section">
+        <div class="terms-group">
+          <input type="checkbox" id="condiciones">
+          <label for="condiciones">Acepto las <strong>condiciones de privacidad</strong> y el tratamiento de mis datos para la elaboración del presupuesto.*</label>
+        </div>
+        <div class="button-group">
+          <button type="button" id="btnEnviar" class="btn-primary">Enviar presupuesto <i class="fas fa-paper-plane"></i></button>
+          <button type="button" id="btnReset" class="btn-secondary">Resetear formulario <i class="fas fa-undo-alt"></i></button>
+        </div>
+        <div id="formFeedback" style="margin-top: 16px; font-size: 0.85rem;"></div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<script src="../js/presupuesto.js"> </script>
+
   <!-- FOOTER COMPLETO CON LOGOS DE REDES SOCIALES (Iconos vectoriales FontAwesome) -->
     <footer>
-        <div class="footer-container">
-            <!-- Sección 1: Información de la tienda -->
-            <div class="footer-section">
-                <h2>La tienda del perfume</h2>
-                <p>La mejor tienda de perfumes con esencias exclusivas y atención personalizada.</p>
-                <p><i class="fas fa-medal"></i> Más de 10 años de fragancias premium</p>
-            </div>
-            
-            <!-- Sección 2: Contacto con íconos -->
-            <div class="footer-section">
-                <h3>Contacto</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Calle Leganés 28, Madrid, España</p>
-                <p><i class="fas fa-phone-alt"></i> +34 912 345 678</p>
-                <p><i class="fas fa-envelope"></i> latiendadelperfume@gmail.com</p>
-            </div>
-            
-            <!-- Sección 3: Síguenos (con logos de redes sociales totalmente funcionales) -->
-            <div class="footer-section">
-                <h3>Síguenos</h3>
-                <div class="social-links">
-                    <!-- Logo de Facebook -->
-                    <a href="https://facebook.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <!-- Logo de Twitter (X) -->
-                    <a href="https://twitter.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <!-- Logo de Instagram -->
-                    <a href="https://instagram.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <!-- Logo de YouTube -->
-                    <a href="https://youtube.com" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </div>
-                <!-- Mensaje adicional sobre redes -->
-                <p style="margin-top: 1rem; font-size: 0.75rem;"><i class="fas fa-hashtag"></i> Conecta con nuestro mundo olfativo</p>
-            </div>
+      <div class="footer-container">
+        <!-- Sección 1: Información de la tienda -->
+        <div class="footer-section">
+          <h3>La tienda del perfume</h3>
+          <p>
+            La mejor tienda de perfumes con esencias exclusivas y atención
+            personalizada.
+          </p>
+          <p>
+            <i class="fas fa-medal"></i> Más de 10 años de fragancias premium
+          </p>
         </div>
-        <div class="footer-bottom">
-            &copy; 2025 La Tienda del Perfume | Todos los derechos reservados | Esencia y lujo para tu día a día
+
+        <!-- Sección 2: Contacto con íconos -->
+        <div class="footer-section">
+          <h3>Contacto</h3>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> Calle Leganés 28, Madrid,
+            España
+          </p>
+          <p><i class="fas fa-phone-alt"></i> +34 912 345 678</p>
+          <p><i class="fas fa-envelope"></i> latiendadelperfume@gmail.com</p>
         </div>
+
+        <!-- Sección 3: Síguenos (con logos de redes sociales totalmente funcionales) -->
+        <div class="footer-section">
+          <h3>Síguenos</h3>
+          <div class="social-links">
+            <!-- Logo de Facebook -->
+            <a
+              href="https://facebook.com"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <!-- Logo de Twitter (X) -->
+            <a
+              href="https://twitter.com"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+            >
+              <i class="fab fa-twitter"></i>
+            </a>
+            <!-- Logo de Instagram -->
+            <a
+              href="https://instagram.com"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <!-- Logo de YouTube -->
+            <a
+              href="https://youtube.com"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+            >
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+          <!-- Mensaje adicional sobre redes -->
+          <p style="margin-top: 1rem; font-size: 0.75rem">
+            <i class="fas fa-hashtag"></i> Conecta con nuestro mundo olfativo
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 La Tienda del Perfume | Todos los derechos reservados |
+        Esencia y lujo para tu día a día
+      </div>
     </footer>
 
-
-    <script src="js/presupuesto.js"></script>
 </body>
 </html>

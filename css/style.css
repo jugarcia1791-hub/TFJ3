@@ -337,6 +337,7 @@ body.presupuesto-page {
     max-width: 1200px;
 }
 
+
 .contacto-grid {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
@@ -830,7 +831,10 @@ body.presupuesto-page {
 
 .navbar-menu a.active {
     background-color: #3498db;
-}/*inicio de estilos de presupuesto*/
+
+}
+
+/*inicio de estilos de presupuesto*/
 .formulario {
     background-color: #f9f9f9;
     padding: 2rem;
@@ -1009,3 +1013,325 @@ input.error {
 .gallery-item:hover .gallery-overlay {
     transform: translateY(0);
 }
+/*inicio del los estilos de presupuesto
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #fefaf5 0%, #f9ede4 100%);
+      color: #2e241f;
+      min-height: 100vh;
+      padding: 40px 24px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Header con volver */
+    .header-presupuesto {
+      margin-bottom: 32px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #b45a2e;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+
+    .back-link:hover {
+      color: #7a3b1c;
+      transform: translateX(-3px);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-top: 16px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #b8743a, #9b4b2c);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle {
+      color: #6b4c3a;
+      margin-bottom: 32px;
+      border-left: 3px solid #d9946e;
+      padding-left: 16px;
+    }
+
+    /* Tarjeta formulario */
+    .form-card {
+      background: white;
+      border-radius: 32px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      border: 1px solid #f0e2d8;
+    }
+
+    .form-section {
+      padding: 32px 40px;
+      border-bottom: 1px solid #f0e2d8;
+    }
+
+    .form-section:last-child {
+      border-bottom: none;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #3b2a20;
+    }
+
+    .section-title i {
+      color: #b45a2e;
+      font-size: 1.4rem;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: #4d3527;
+    }
+
+    label .required {
+      color: #c25a2c;
+      margin-left: 4px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid #e8d9cf;
+      border-radius: 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      transition: 0.2s;
+      background: #fffdfb;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: #b45a2e;
+      box-shadow: 0 0 0 3px rgba(180, 90, 46, 0.1);
+    }
+
+    .error-msg {
+      font-size: 0.75rem;
+      color: #d9534f;
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .error-msg i {
+      font-size: 0.7rem;
+    }
+
+    .input-error {
+      border-color: #d9534f !important;
+      background-color: #fff8f8;
+    }
+
+    /* Dos columnas para datos contacto */
+    .row-2cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* Presupuesto: producto, plazo, extras */
+    .budget-option {
+      margin-bottom: 28px;
+    }
+
+    .budget-option h3 {
+      font-weight: 600;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+      color: #3b2a20;
+    }
+
+    .radio-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 8px;
+    }
+
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: normal;
+      cursor: pointer;
+    }
+
+    .radio-group input[type="radio"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #b45a2e;
+    }
+
+    .extra-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 8px;
+    }
+
+    .extra-group label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: normal;
+      cursor: pointer;
+    }
+
+    .extra-group input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #b45a2e;
+    }
+
+    .price-badge {
+      font-size: 0.8rem;
+      color: #b45a2e;
+      margin-left: 5px;
+      font-weight: 500;
+    }
+
+    .plazo-input {
+      max-width: 200px;
+    }
+
+    /* Resultado presupuesto */
+    .presupuesto-result {
+      background: #fdf3ec;
+      border-radius: 24px;
+      padding: 20px;
+      margin: 24px 0;
+      text-align: center;
+      border: 1px solid #f0dfd2;
+    }
+
+    .presupuesto-result h4 {
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #8c6248;
+    }
+
+    .presupuesto-final {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #b45a2e;
+      margin-top: 8px;
+    }
+
+    .presupuesto-detalle {
+      font-size: 0.8rem;
+      color: #6b4c3a;
+      margin-top: 8px;
+    }
+
+    /* Condiciones y botones */
+    .terms-group {
+      margin: 20px 0 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .terms-group label {
+      margin-bottom: 0;
+      font-weight: normal;
+      cursor: pointer;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: #b45a2e;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      background: #914a24;
+      transform: translateY(-2px);
+    }
+
+    .btn-primary:disabled {
+      background: #cdb5a6;
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+
+    .btn-secondary {
+      background: #f0e4db;
+      color: #5a3a28;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: #e2d2c5;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #a6846c;
+    }
+
+    @media (max-width: 700px) {
+      .form-section {
+        padding: 24px 20px;
+      }
+      .row-2cols {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .presupuesto-final {
+        font-size: 1.8rem;
+      }
+    }
+  
