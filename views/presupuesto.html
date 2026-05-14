@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>Presupuesto - Tienda Online</title>
     <link rel="stylesheet" href="../css/style.css">
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    >
+  </head>
 
-<body>
+  <body>
     <header>
       <h1>✨La tienda del perfume✨</h1>
       <p>Tu mejor opción en perfumes y fragancias</p>
@@ -34,113 +35,155 @@
       </div>
     </header>
     <div class="container">
-        <div class="header">
-            <h1>📋 Solicitud de Presupuesto</h1>
-            <p>Completa el formulario para recibir tu presupuesto personalizado</p>
-        </div>
+      <div class="header">
+        <h1>📋 Solicitud de Presupuesto</h1>
+        <p>Completa el formulario para recibir tu presupuesto personalizado</p>
+      </div>
 
-        <div class="form-content">
-            <form id="presupuestoForm">
-                <!-- Datos de Contacto -->
-                <div class="section">
-                    <h2>📝 Datos de Contacto</h2>
-                    
-                    <div class="form-group">
-                        <label for="nombre">Nombre *</label>
-                        <input type="text" id="nombre" name="nombre" maxlength="15">
-                        <div class="error-message" id="errorNombre">El nombre solo puede contener letras (máx. 15 caracteres)</div>
-                    </div>
+      <div class="form-content">
+        <form id="presupuestoForm">
+          <!-- Datos de Contacto -->
+          <div class="section">
+            <h2>📝 Datos de Contacto</h2>
 
-                    <div class="form-group">
-                        <label for="apellidos">Apellidos *</label>
-                        <input type="text" id="apellidos" name="apellidos" maxlength="40">
-                        <div class="error-message" id="errorApellidos">Los apellidos solo pueden contener letras (máx. 40 caracteres)</div>
-                    </div>
+            <div class="form-group">
+              <label for="nombre">Nombre *</label>
+              <input type="text" id="nombre" name="nombre" maxlength="15" >
+              <div class="error-message" id="errorNombre">
+                El nombre solo puede contener letras (máx. 15 caracteres)
+              </div>
+            </div>
 
-                    <div class="form-group">
-                        <label for="telefono">Teléfono de contacto *</label>
-                        <input type="tel" id="telefono" name="telefono" maxlength="9">
-                        <div class="error-message" id="errorTelefono">El teléfono solo puede contener números (máx. 9 dígitos)</div>
-                    </div>
+            <div class="form-group">
+              <label for="apellidos">Apellidos *</label>
+              <input
+                type="text"
+                id="apellidos"
+                name="apellidos"
+                maxlength="40"
+              >
+              <div class="error-message" id="errorApellidos">
+                Los apellidos solo pueden contener letras (máx. 40 caracteres)
+              </div>
+            </div>
 
-                    <div class="form-group">
-                        <label for="email">Correo electrónico *</label>
-                        <input type="email" id="email" name="email">
-                        <div class="error-message" id="errorEmail">Introduce un correo electrónico válido (ejemplo: nombre@dominio.com)</div>
-                    </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono de contacto *</label>
+              <input type="tel" id="telefono" name="telefono" maxlength="9" >
+              <div class="error-message" id="errorTelefono">
+                El teléfono solo puede contener números (máx. 9 dígitos)
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Correo electrónico *</label>
+              <input type="email" id="email" name="email" >
+              <div class="error-message" id="errorEmail">
+                Introduce un correo electrónico válido (ejemplo:
+                nombre@dominio.com)
+              </div>
+            </div>
+          </div>
+
+          <!-- Presupuesto -->
+          <div class="section">
+            <h2>💰 Calcula tu Presupuesto</h2>
+
+            <div class="form-group">
+              <label for="producto">Producto *</label>
+              <select id="producto" name="producto">
+                <option value="0">-- Selecciona un producto --</option>
+                <option value="89">- Ámbar Nocturno - $89 -</option>
+                <option value="59">- Jardín Secreto - $59 -</option>
+                <option value="299.99">- Rey de Oud - $29</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="plazo">Plazo de entrega (días) *</label>
+              <input
+                type="number"
+                id="plazo"
+                name="plazo"
+                min="1"
+                max="90"
+                value="30"
+              >
+              <small
+                >Descuento: 5% a partir de 30 días, 10% a partir de 60
+                días</small
+              >
+            </div>
+
+            <div class="form-group">
+              <label>Extras (puedes seleccionar varios)</label>
+              <div class="extras-group">
+                <div class="extra-item">
+                  <input type="checkbox" id="extra1" value="49.99" >
+                  <label for="extra1">📦 frasco de 500ml - $49.99</label>
                 </div>
-
-                <!-- Presupuesto -->
-                <div class="section">
-                    <h2>💰 Calcula tu Presupuesto</h2>
-                    
-                    <div class="form-group">
-                        <label for="producto">Producto *</label>
-                        <select id="producto" name="producto">
-                            <option value="0">-- Selecciona un producto --</option>
-                            <option value="899.99">💻 Laptop Gaming - $899.99</option>
-                            <option value="599.99">📱 Smartphone Premium - $599.99</option>
-                            <option value="299.99">🎧 Audífonos Bluetooth - $299.99</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="plazo">Plazo de entrega (días) *</label>
-                        <input type="number" id="plazo" name="plazo" min="1" max="90" value="30">
-                        <small>Descuento: 5% a partir de 30 días, 10% a partir de 60 días</small>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Extras (puedes seleccionar varios)</label>
-                        <div class="extras-group">
-                            <div class="extra-item">
-                                <input type="checkbox" id="extra1" value="49.99">
-                                <label for="extra1">🛡️ Garantía Extendida (2 años) - $49.99</label>
-                            </div>
-                            <div class="extra-item">
-                                <input type="checkbox" id="extra2" value="29.99">
-                                <label for="extra2">🚚 Envío Express - $29.99</label>
-                            </div>
-                            <div class="extra-item">
-                                <input type="checkbox" id="extra3" value="19.99">
-                                <label for="extra3">💻 Software de Oficina - $19.99</label>
-                            </div>
-                            <div class="extra-item">
-                                <input type="checkbox" id="extra4" value="39.99">
-                                <label for="extra4">🔋 Cargador Rápido + Funda - $39.99</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Presupuesto en tiempo real -->
-                    <div class="presupuesto-box">
-                        <h3>💰 PRESUPUESTO TOTAL</h3>
-                        <div class="presupuesto-total" id="presupuestoTotal">$0.00</div>
-                        <div class="presupuesto-detalle" id="presupuestoDetalle"></div>
-                    </div>
+                <div class="extra-item">
+                  <input type="checkbox" id="extra2" value="29.99" >
+                  <label for="extra2">🚚 Envío Express - $29.99</label>
                 </div>
-
-                <!-- Condiciones y envío -->
-                <div class="conditions">
-                    <label>
-                        <input type="checkbox" id="condiciones">
-                        <span>Acepto las <strong>condiciones de privacidad</strong> y el tratamiento de mis datos personales *</span>
-                    </label>
+                <div class="extra-item">
+                  <input type="checkbox" id="extra3" value="19.99" >
+                  <label for="extra3">🛡️ seguro de daños - $19.99</label>
                 </div>
-
-                <div class="buttons">
-                    <button type="button" class="btn btn-secondary" onclick="resetFormulario()">🗑️ Resetear formulario</button>
-                    <button type="button" class="btn btn-primary" onclick="enviarFormulario()">📨 Enviar presupuesto</button>
+                <div class="extra-item">
+                  <input type="checkbox" id="extra4" value="39.99" >
+                  <label for="extra4"
+                    >🌿 extracto puro de vainilla - $39.99</label
+                  >
                 </div>
+              </div>
+            </div>
 
-                <div id="successMessage" class="success-message">
-                    ✅ ¡Presupuesto enviado con éxito! En breve recibirás un correo con los detalles.
-                </div>
-            </form>
-        </div>
+            <!-- Presupuesto en tiempo real -->
+            <div class="presupuesto-box">
+              <h3>💰 PRESUPUESTO TOTAL</h3>
+              <div class="presupuesto-total" id="presupuestoTotal">$0.00</div>
+              <div class="presupuesto-detalle" id="presupuestoDetalle"></div>
+            </div>
+          </div>
+
+          <!-- Condiciones y envío -->
+          <div class="conditions">
+            <label>
+              <input type="checkbox" id="condiciones" >
+              <span
+                >Acepto las <strong>condiciones de privacidad</strong> y el
+                tratamiento de mis datos personales *</span
+              >
+            </label>
+          </div>
+
+          <div class="buttons">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              onclick="resetFormulario()"
+            >
+              🗑️ Resetear formulario
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="enviarFormulario()"
+            >
+              📨 Enviar presupuesto
+            </button>
+          </div>
+
+          <div id="successMessage" class="success-message">
+            ✅ ¡Presupuesto enviado con éxito! En breve recibirás un correo con
+            los detalles.
+          </div>
+        </form>
+      </div>
     </div>
 
-     <script src="../js/presupuesto.js"></script>
+    <script src="../js/presupuesto.js"></script>
     <!-- FOOTER COMPLETO CON LOGOS DE REDES SOCIALES (Iconos vectoriales FontAwesome) -->
     <footer>
       <div class="footer-container">
@@ -223,7 +266,5 @@
         Esencia y lujo para tu día a día
       </div>
     </footer>
-
-    
-</body>
+  </body>
 </html>

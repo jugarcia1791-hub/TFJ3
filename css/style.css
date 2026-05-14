@@ -838,7 +838,6 @@ body {
   background-color: #3498db;
 }
 
-
 /* Página de Galería/Productos */
 .gallery {
   padding: 4rem 2rem;
@@ -929,227 +928,229 @@ h1 {
   padding-left: 16px;
 }
 /*Estilos para el formulario de presupuesto */
- * {
+* {
   margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  padding: 0;
+  box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
-        }
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
 
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
 
-        .header h1 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
+.header h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
 
-        .form-content {
-            padding: 30px;
-        }
+.form-content {
+  padding: 30px;
+}
 
-        .section {
-            margin-bottom: 30px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
-        }
+.section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border-left: 4px solid #667eea;
+}
 
-        .section h2 {
-            color: #667eea;
-            margin-bottom: 20px;
-            font-size: 1.5em;
-        }
+.section h2 {
+  color: #667eea;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
 
-        .form-group {
-            margin-bottom: 15px;
-        }
+.form-group {
+  margin-bottom: 15px;
+}
 
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #333;
-        }
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
 
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: all 0.3s;
-        }
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s;
+}
 
-        .form-group input:focus, .form-group select:focus {
-            outline: none;
-            border-color: #667eea;
-        }
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #667eea;
+}
 
-        .error-message {
-            color: #dc3545;
-            font-size: 12px;
-            margin-top: 5px;
-            display: none;
-        }
+.error-message {
+  color: #dc3545;
+  font-size: 12px;
+  margin-top: 5px;
+  display: none;
+}
 
-        .error-message.active {
-            display: block;
-        }
+.error-message.active {
+  display: block;
+}
 
-        .input-error {
-            border-color: #dc3545 !important;
-        }
+.input-error {
+  border-color: #dc3545 !important;
+}
 
-        .extras-group {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+.extras-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
-        .extra-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px;
-            background: white;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
+.extra-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
 
-        .extra-item:hover {
-            background: #e9ecef;
-        }
+.extra-item:hover {
+  background: #e9ecef;
+}
 
-        .extra-item input {
-            width: auto;
-            cursor: pointer;
-        }
+.extra-item input {
+  width: auto;
+  cursor: pointer;
+}
 
-        .extra-item label {
-            cursor: pointer;
-            margin: 0;
-            flex: 1;
-        }
+.extra-item label {
+  cursor: pointer;
+  margin: 0;
+  flex: 1;
+}
 
-        .extra-price {
-            color: #28a745;
-            font-weight: bold;
-        }
+.extra-price {
+  color: #28a745;
+  font-weight: bold;
+}
 
-        .presupuesto-box {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            margin-top: 20px;
-        }
+.presupuesto-box {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 20px;
+}
 
-        .presupuesto-box h3 {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-        }
+.presupuesto-box h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
 
-        .presupuesto-total {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #ffd700;
-        }
+.presupuesto-total {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #ffd700;
+}
 
-        .presupuesto-detalle {
-            margin-top: 10px;
-            font-size: 0.9em;
-            opacity: 0.9;
-        }
+.presupuesto-detalle {
+  margin-top: 10px;
+  font-size: 0.9em;
+  opacity: 0.9;
+}
 
-        .conditions {
-            margin: 20px 0;
-            padding: 15px;
-            background: #fff3cd;
-            border-radius: 5px;
-            border-left: 4px solid #ffc107;
-        }
+.conditions {
+  margin: 20px 0;
+  padding: 15px;
+  background: #fff3cd;
+  border-radius: 5px;
+  border-left: 4px solid #ffc107;
+}
 
-        .conditions label {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-        }
+.conditions label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
 
-        .buttons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
+.buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
 
-        .btn {
-            flex: 1;
-            padding: 12px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
+.btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
 
-        .btn-primary {
-            background: #667eea;
-            color: white;
-        }
+.btn-primary {
+  background: #667eea;
+  color: white;
+}
 
-        .btn-primary:hover {
-            background: #5a67d8;
-            transform: translateY(-2px);
-        }
+.btn-primary:hover {
+  background: #5a67d8;
+  transform: translateY(-2px);
+}
 
-        .btn-secondary {
-            background: #6c757d;
-            color: white;
-        }
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
 
-        .btn-secondary:hover {
-            background: #5a6268;
-        }
+.btn-secondary:hover {
+  background: #5a6268;
+}
 
-        .btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 
-        .success-message {
-            background: #d4edda;
-            color: #155724;
-            padding: 15px;
-            border-radius: 5px;
-            margin-top: 20px;
-            display: none;
-            border-left: 4px solid #28a745;
-        }
+.success-message {
+  background: #d4edda;
+  color: #155724;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  display: none;
+  border-left: 4px solid #28a745;
+}
 
-        .success-message.active {
-            display: block;
-        }
+.success-message.active {
+  display: block;
+}

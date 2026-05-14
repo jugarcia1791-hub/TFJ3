@@ -1,86 +1,100 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>Contacto - Mi Sitio Web</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" >
-    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" >
-    <link rel="stylesheet" href="../css/style.css">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css"
+    >
+    <link rel="stylesheet" href="../css/style.css" >
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     >
-</head>
+  </head>
 
-<body class="index-page">
+  <body class="index-page">
     <!--inicio del header-->
     <header>
       <h1>✨La tienda del perfume✨</h1>
       <p>Tu mejor opción en perfumes y fragancias</p>
 
       <!-- Navbar sencillo -->
-       
-<!-- Navbar sencilla con logo llamativo -->
-<div class="navbar">
-    <div class="navbar-container">
-        <div class="navbar-logo">
+
+      <!-- Navbar sencilla con logo llamativo -->
+      <div class="navbar">
+        <div class="navbar-container">
+          <div class="navbar-logo">
             <div class="navbar-logo-icon">🧴</div>
             <a href="../index.html">Mi<span>SitioWeb</span></a>
-           
-        </div>
-        <div class="navbar-menu" id="navbarMenu">
-            <a href="../index.html" >Inicio</a>
+          </div>
+          <div class="navbar-menu" id="navbarMenu">
+            <a href="../index.html">Inicio</a>
             <a href="./galeria.html">Galería</a>
             <a href="./presupuesto.html">Presupuesto</a>
             <a href="./contacto.html" class="active">Contacto</a>
+          </div>
         </div>
-    </div>
-</div>
-
+      </div>
     </header>
     <div class="container contacto-container">
-        <h1>Contacta con nosotros</h1>
+      <h1>Contacta con nosotros</h1>
 
-        <div class="contacto-grid">
-            <div class="contacto-info">
-                <h2>Información de contacto</h2>
-                <div class="info-item">
-                    <span class="icono">📍</span>
-                    <div><strong>Dirección:</strong><br>Calle leganes 123<br>28001 Madrid, España</div>
-                </div>
-                <div class="info-item">
-                    <span class="icono">📞</span>
-                    <div><strong>Teléfono:</strong><br>+34 912 345 678</div>
-                </div>
-                <div class="info-item">
-                    <span class="icono">✉️</span>
-                    <div><strong>Email:</strong><br>latiendadelperfume@.com</div>
-                </div>
-                <div class="info-item">
-                    <span class="icono">🕒</span>
-                    <div><strong>Horario:</strong><br>Lunes a Viernes: 9:00 - 18:00<br>Sábados: 10:00 - 14:00</div>
-                </div>
+      <div class="contacto-grid">
+        <div class="contacto-info">
+          <h2>Información de contacto</h2>
+          <div class="info-item">
+            <span class="icono">📍</span>
+            <div>
+              <strong>Dirección:</strong><br>Calle leganes 123<br>28001
+              Madrid, España
             </div>
-
-            <div class="contacto-mapa">
-                <h2>¿Cómo llegar?</h2>
-                <div id="mapa" class="mapa"></div>
-                
-                <div class="ruta-form">
-                    <h3>Calcular otra ruta (opcional)</h3>
-                    <div class="form-group">
-                        <label for="direccion-origen">calle leganes 123:</label>
-                        <input type="text" id="direccion-origen" placeholder="Calle, ciudad...">
-                    </div>
-                    <button id="btn-calcular-ruta" class="btn btn-primary">🗺️ Calcular ruta</button>
-                    <div id="info-ruta" class="info-ruta"></div>
-                </div>
+          </div>
+          <div class="info-item">
+            <span class="icono">📞</span>
+            <div><strong>Teléfono:</strong><br>+34 912 345 678</div>
+          </div>
+          <div class="info-item">
+            <span class="icono">✉️</span>
+            <div><strong>Email:</strong><br>latiendadelperfume@.com</div>
+          </div>
+          <div class="info-item">
+            <span class="icono">🕒</span>
+            <div>
+              <strong>Horario:</strong><br>Lunes a Viernes: 9:00 - 18:00<br>Sábados:
+              10:00 - 14:00
             </div>
+          </div>
         </div>
-    </div>
 
-    
+        <div class="contacto-mapa">
+          <h2>¿Cómo llegar?</h2>
+          <div id="mapa" class="mapa"></div>
+
+          <div class="ruta-form">
+            <h3>Calcular otra ruta (opcional)</h3>
+            <div class="form-group">
+              <label for="direccion-origen">calle leganes 123:</label>
+              <input
+                type="text"
+                id="direccion-origen"
+                placeholder="Calle, ciudad..."
+              >
+            </div>
+            <button id="btn-calcular-ruta" class="btn btn-primary">
+              🗺️ Calcular ruta
+            </button>
+            <div id="info-ruta" class="info-ruta"></div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Scripts en el orden correcto -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -170,5 +184,5 @@
         Esencia y lujo para tu día a día
       </div>
     </footer>
-    </body>
+  </body>
 </html>
